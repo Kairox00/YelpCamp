@@ -47,7 +47,7 @@ router.post("/login",passport.authenticate("local",{
 }),(req,res)=>{
     console.log(req.get('referer'));
     var destination;
-    if(referer == "https://cc1e2f79267e4961933b43a710f3066f.vfs.cloud9.us-east-2.amazonaws.com/" || referer == "https://cryptic-gorge-85959.herokuapp.com/" ){
+    if(referer == undefined){
         console.log("done comparing");
         destination = "/campgrounds";
     }
