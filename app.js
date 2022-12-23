@@ -17,13 +17,15 @@ const
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-// console.log(process.env.DATABASE_URL);
+console.log(process.env.DATABASEURL);
 // seedDB(); 
-mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true , useUnifiedTopology: true });
+
+const connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
+const url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp";
+mongoose.connect( url, { useNewUrlParser: true , useUnifiedTopology: true });
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true });
-// let connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
-// mongoose.connect("mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
-// mongoose.connect(connectionString, { useNewUrlParser: true , useUnifiedTopology: true});
+
+
 
 
 mongoose.set('useFindAndModify', false);
