@@ -19,11 +19,11 @@ const
 
 // console.log(process.env.DATABASE_URL);
 // seedDB(); 
-//  mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true , useUnifiedTopology: true });
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true });
-let connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
+// let connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
 // mongoose.connect("mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
-mongoose.connect(connectionString, { useNewUrlParser: true , useUnifiedTopology: true});
+// mongoose.connect(connectionString, { useNewUrlParser: true , useUnifiedTopology: true});
 
 
 mongoose.set('useFindAndModify', false);
