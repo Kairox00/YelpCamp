@@ -21,8 +21,9 @@ const
 // seedDB(); 
 //  mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true , useUnifiedTopology: true });
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true });
-mongoose.connect("mongodb+srv://Kai:good4you@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
-
+let connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
+// mongoose.connect("mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect(connectionString, { useNewUrlParser: true , useUnifiedTopology: true});
 
 
 mongoose.set('useFindAndModify', false);
@@ -60,5 +61,5 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 //LISTENER
 app.listen(3000, process.env.IP, function(){
-    console.log(process.env.IP);
+    console.log("connected");
 });
