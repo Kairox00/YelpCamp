@@ -17,12 +17,11 @@ const
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-console.log(process.env.DATABASEURL);
 // seedDB(); 
 
 const connectionString = "mongodb+srv://Kai:SoK62e2EvSuoM8yg@yelpcamp.9b6jw.mongodb.net/YelpCamp?retryWrites=true&w=majority";
-const url = process.env.DATABASEURL;
-mongoose.connect( connectionString, { useNewUrlParser: true , useUnifiedTopology: true });
+const url = process.env.DATABASEURL || connectionString;
+mongoose.connect( url, { useNewUrlParser: true , useUnifiedTopology: true });
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true });
 
 
@@ -64,4 +63,5 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 //LISTENER
 app.listen(3000, process.env.IP, function(){
     console.log("connected");
+    console.log(process.env.DATABASEURL);
 });
