@@ -61,7 +61,7 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 //LISTENER
-app.listen(3000, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log("connected");
     console.log(process.env.DATABASEURL);
 });
